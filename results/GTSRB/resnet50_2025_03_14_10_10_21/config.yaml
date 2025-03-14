@@ -1,0 +1,108 @@
+path:
+  data_path: './data/GTSRB/'
+  result_path: results/
+  config_path: config/GTSRB/config.yaml
+
+general:
+  num_classes: 43
+
+learning:
+  train_batch_size: 64
+  test_batch_size: 64
+  num_workers: 16
+  learning_rate: 0.015
+  momentum: 0.9
+  weight_decay: 0.0005
+  decrease_lr_factor: 0.12
+  decrease_lr_every: 5
+  epochs: 5
+
+distill:
+  train_batch_size: 64
+  num_workers: 16
+  learning_rate: 0.015
+  momentum: 0.9
+  weight_decay: 0.0005
+  decrease_lr_factor: 0.1
+  decrease_lr_every: 20
+  epochs: 10
+
+attack_learning:
+  train_batch_size: 64
+  test_batch_size: 256
+  num_workers: 16
+  learning_rate: 0.0005
+  momentum: 0.9
+  weight_decay: 0.00001
+  decrease_lr_factor: 0.1
+  decrease_lr_every: 30
+  epochs: 100
+
+# Namespace(model='resnet50', dataset='GTSRB', attack_method_attention='rollout', metric='KL_divergence', device='cuda', seed=10)
+
+# target_train_test_accuracy
+#  [0.99990354 0.99324781]
+# shadow_train_test_accuracy
+#  [0.99508054 0.99729912]
+# ****************************************************************************************************
+# w16a16-MIA train set distribution **************************************************
+# Member: min = 0.00016799368 max = 19.472393 std = 3.3430707
+# Non-member: min = 5.019922e-05 max = 10.764495 std = 0.6033666
+# w16a16-MIA test set distribution **************************************************
+# Member: min = 0.00011669114 max = 21.136868 std = 3.1717744
+# Non-member: min = 5.673682e-05 max = 5.2918587 std = 0.26068377
+# test accuracy:  0.9788270473618211
+# test precision:  0.9986939923648784
+# test recall:  0.9589080736953796
+# AUC
+#  0.9815857620206745
+# TPR at FPR = 0.001: 0.9577505546445452
+# ****************************************************************************************************
+# w8a8-MIA train set distribution **************************************************
+# Member: min = 0.000120952296 max = 19.270477 std = 3.4008164
+# Non-member: min = 5.0665185e-05 max = 10.578744 std = 0.6309792
+# w8a8-MIA test set distribution **************************************************
+# Member: min = 0.00014739005 max = 19.154799 std = 3.2128265
+# Non-member: min = 4.0861283e-05 max = 5.5624347 std = 0.3047088
+# test accuracy:  0.9774283785087297
+# test precision:  0.9976872800402212
+# test recall:  0.9570753351982252
+# AUC
+#  0.9819734951733614
+# TPR at FPR = 0.001: 0.9495514613678017
+# ****************************************************************************************************
+# w6a6-MIA train set distribution **************************************************
+# Member: min = 0.00010079279 max = 19.748764 std = 3.740363
+# Non-member: min = 4.283543e-05 max = 11.294103 std = 1.3774916
+# w6a6-MIA test set distribution **************************************************
+# Member: min = 0.00017229756 max = 17.025198 std = 3.2861938
+# Non-member: min = 5.7807785e-05 max = 7.200014 std = 1.1876856
+# test accuracy:  0.935757692678692
+# test precision:  0.9516145156453064
+# test recall:  0.9182019870743706
+# AUC
+#  0.976509208600734
+# TPR at FPR = 0.001: 0.7260538246358638
+# ****************************************************************************************************
+# w4a4-MIA train set distribution **************************************************
+# Member: min = 0.58872426 max = 9.427128 std = 0.5956976
+# Non-member: min = 0.17926125 max = 5.7030697 std = 0.70848113
+# w4a4-MIA test set distribution **************************************************
+# Member: min = 0.04078063 max = 13.265264 std = 1.9615113
+# Non-member: min = 0.029815134 max = 12.227041 std = 1.972758
+# test accuracy:  0.5348702614063856
+# test precision:  0.525676539526955
+# test recall:  0.7138998746021028
+# AUC
+#  0.5547973579155926
+# TPR at FPR = 0.001: 0.004147776598823189
+# ****************************************************************************************************
+# accuracy_mia_base_classifier
+#  0.5022668081412173
+# precision_mia_base_classifier
+#  0.5025579623380865
+# recall_mia_base_classifier
+#  0.44535545480852706
+# AUC
+#  0.5012566400634106
+# TPR at FPR = 0.001: 0.0011189626424506333

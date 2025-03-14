@@ -1,0 +1,40 @@
+path:
+  data_path: './data/ImageNet100/'
+  result_path: results/
+  config_path: config/ImageNet100/config.yaml
+
+general:
+  num_classes: 100
+  num_per_class: 300
+
+learning:
+  train_batch_size: 256
+  test_batch_size: 256
+  num_workers: 16
+  learning_rate: 0.01
+  weight_decay: 0.0001
+  momentum: 0.9
+  decrease_lr_factor: 0.15
+  decrease_lr_every: 40
+  epochs: 100
+
+distill:
+  train_batch_size: 64
+  num_workers: 16
+  learning_rate: 0.01
+  momentum: 0.9
+  weight_decay: 0.0005
+  decrease_lr_factor: 0.1
+  decrease_lr_every: 20
+  epochs: 20
+  
+attack_learning:
+  train_batch_size: 64
+  test_batch_size: 256
+  num_workers: 16
+  learning_rate: 0.0005
+  momentum: 0.9
+  weight_decay: 0.00001
+  decrease_lr_factor: 0.1
+  decrease_lr_every: 30
+  epochs: 100

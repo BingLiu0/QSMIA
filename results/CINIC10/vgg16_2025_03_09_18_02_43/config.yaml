@@ -1,0 +1,122 @@
+path:
+  data_path: './data/CINIC10/'
+  result_path: results/
+  config_path: config/CINIC10/config.yaml
+
+general:
+  num_classes: 10
+  num_per_class: 2000
+
+learning:
+  train_batch_size: 128
+  test_batch_size: 32
+  num_workers: 16
+  learning_rate: 0.001
+  momentum: 0.9
+  weight_decay: 0.0005
+  decrease_lr_factor: 0.1
+  decrease_lr_every: 10
+  epochs: 20
+
+attack_learning:
+  train_batch_size: 64
+  test_batch_size: 256
+  num_workers: 16
+  learning_rate: 0.0005
+  momentum: 0.9
+  weight_decay: 0.00001
+  decrease_lr_factor: 0.1
+  decrease_lr_every: 30
+  epochs: 100
+
+# Namespace(model='vgg16', dataset='CINIC10', attack_method_attention='rollout', metric='KL_divergence', device='cuda', seed=10)
+
+# target_train_test_accuracy
+#  [0.99975 0.81975]
+# shadow_train_test_accuracy
+#  [0.9999 0.813 ]
+# ****************************************************************************************************
+# w16a16_target_train_test_accuracy
+#  [0.99975 0.81935]
+# w16a16_shadow_train_test_accuracy
+#  [0.9999 0.8128]
+# ****************************************************************************************************
+# w8a8_target_train_test_accuracy
+#  [0.99975 0.81855]
+# w8a8_shadow_train_test_accuracy
+#  [0.9999 0.8121]
+# ****************************************************************************************************
+# w6a6_target_train_test_accuracy
+#  [0.9903  0.80835]
+# w6a6_shadow_train_test_accuracy
+#  [0.9857 0.7921]
+# ****************************************************************************************************
+# w4a4_target_train_test_accuracy
+#  [0.409   0.38695]
+# w4a4_shadow_train_test_accuracy
+#  [0.34255 0.32745]
+# ****************************************************************************************************
+# W16A16-MIA训练集分布 **************************************************
+# Member: min = 0.0 max = 23.02585 std = 7.2295346
+# Non-member: min = 0.0 max = 2.598404 std = 0.032144953
+# W16A16-MIA测试集分布 **************************************************
+# Member: min = 0.0 max = 23.02585 std = 7.37114
+# Non-member: min = 0.0 max = 2.0227146 std = 0.023650268
+# test accuracy:  0.94985
+# test precision:  0.9999444320960214
+# test recall:  0.89975
+# AUC
+#  0.9724737825
+# FPR = 0.001 不存在于 FPR 数组中，插值法结果为：
+# TPR at FPR = 0.001: 0.89985
+# ****************************************************************************************************
+# W8A8-MIA训练集分布 **************************************************
+# Member: min = 0.0 max = 23.02585 std = 7.3573294
+# Non-member: min = 0.0 max = 2.657917 std = 0.039468676
+# W8A8-MIA测试集分布 **************************************************
+# Member: min = 0.0 max = 23.02585 std = 7.3341146
+# Non-member: min = 0.0 max = 2.2365668 std = 0.034066275
+# test accuracy:  0.950725
+# test precision:  0.9998890922198193
+# test recall:  0.90155
+# AUC
+#  0.9649198599999999
+# FPR = 0.001 不存在于 FPR 数组中，插值法结果为：
+# TPR at FPR = 0.001: 0.90185
+# ****************************************************************************************************
+# W6A6-MIA训练集分布 **************************************************
+# Member: min = 0.0 max = 23.02585 std = 7.5983715
+# Non-member: min = 0.0 max = 17.423044 std = 0.7900607
+# W6A6-MIA测试集分布 **************************************************
+# Member: min = 0.0 max = 23.02585 std = 7.5673285
+# Non-member: min = 0.0 max = 11.216474 std = 0.58790547
+# test accuracy:  0.944875
+# test precision:  0.9957100674132263
+# test recall:  0.8936
+# AUC
+#  0.9549767525000001
+# TPR at FPR = 0.001: 0.8804
+# ****************************************************************************************************
+# W4A4-MIA训练集分布 **************************************************
+# Member: min = 0.0 max = 23.02585 std = 7.389285
+# Non-member: min = 0.0 max = 23.02585 std = 5.412506
+# W4A4-MIA测试集分布 **************************************************
+# Member: min = 0.0 max = 23.02585 std = 6.9632745
+# Non-member: min = 0.0 max = 22.994444 std = 4.0918264
+# test accuracy:  0.7168
+# test precision:  0.863088259922961
+# test recall:  0.51535
+# AUC
+#  0.807745025
+# TPR at FPR = 0.001: 0.0975
+# ****************************************************************************************************
+# accuracy_mia_base_classifier
+#  0.598625
+# precision_mia_base_classifier
+#  0.5548480382615466
+# recall_mia_base_classifier
+#  0.9977
+# AUC
+#  0.62440929625
+# FPR = 0.001 不存在于 FPR 数组中，插值法结果为：
+# TPR at FPR = 0.001: 0.0009911954765751212

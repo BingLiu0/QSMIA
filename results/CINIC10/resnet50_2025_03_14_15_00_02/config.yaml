@@ -1,0 +1,109 @@
+path:
+  data_path: './data/CINIC10/'
+  result_path: results/
+  config_path: config/CINIC10/config.yaml
+
+general:
+  num_classes: 10
+  num_per_class: 2000
+
+learning:
+  train_batch_size: 64
+  test_batch_size: 128
+  num_workers: 16
+  learning_rate: 0.015
+  momentum: 0.9
+  weight_decay: 0.0005
+  decrease_lr_factor: 0.12
+  decrease_lr_every: 20
+  epochs: 25
+
+distill:
+  train_batch_size: 128
+  num_workers: 16
+  learning_rate: 0.015
+  momentum: 0.9
+  weight_decay: 0.0005
+  decrease_lr_factor: 0.1
+  decrease_lr_every: 20
+  epochs: 20
+  
+attack_learning:
+  train_batch_size: 64
+  test_batch_size: 256
+  num_workers: 16
+  learning_rate: 0.0005
+  momentum: 0.9
+  weight_decay: 0.00001
+  decrease_lr_factor: 0.1
+  decrease_lr_every: 30
+  epochs: 100
+
+# Namespace(model='resnet50', dataset='CINIC10', attack_method_attention='rollout', metric='KL_divergence', device='cuda', seed=10)
+
+# target_train_test_accuracy
+#  [0.9979 0.8632]
+# shadow_train_test_accuracy
+#  [0.997  0.8614]
+# ****************************************************************************************************
+# w16a16-MIA train set distribution **************************************************
+# Member: min = 2.6345542e-05 max = 14.675591 std = 3.107592
+# Non-member: min = 2.1281141e-05 max = 11.28675 std = 2.0109577
+# w16a16-MIA test set distribution **************************************************
+# Member: min = 3.2319665e-05 max = 14.885845 std = 3.084092
+# Non-member: min = 1.912746e-06 max = 8.092301 std = 0.4619578
+# test accuracy:  0.91505
+# test precision:  0.9977215493464444
+# test recall:  0.832
+# AUC
+#  0.95230262
+# TPR at FPR = 0.001: 0.8068
+# ****************************************************************************************************
+# w8a8-MIA train set distribution **************************************************
+# Member: min = 1.5251214e-05 max = 14.865835 std = 3.0842795
+# Non-member: min = 1.6647933e-05 max = 11.518973 std = 2.0068407
+# w8a8-MIA test set distribution **************************************************
+# Member: min = 3.143082e-05 max = 14.54769 std = 3.0758502
+# Non-member: min = 5.816715e-06 max = 8.267678 std = 0.4695852
+# test accuracy:  0.911
+# test precision:  0.9979403925369518
+# test recall:  0.8237
+# AUC
+#  0.95208009625
+# TPR at FPR = 0.001: 0.8024
+# ****************************************************************************************************
+# w6a6-MIA train set distribution **************************************************
+# Member: min = 4.2008105e-05 max = 14.483389 std = 2.9169998
+# Non-member: min = 2.1868553e-05 max = 10.69713 std = 1.776238
+# w6a6-MIA test set distribution **************************************************
+# Member: min = 3.8021437e-05 max = 14.287449 std = 2.930234
+# Non-member: min = 5.884107e-06 max = 8.25175 std = 0.68950254
+# test accuracy:  0.901925
+# test precision:  0.9860330128786504
+# test recall:  0.8154
+# AUC
+#  0.94580084
+# TPR at FPR = 0.001: 0.6537
+# ****************************************************************************************************
+# w4a4-MIA train set distribution **************************************************
+# Member: min = 0.23929091 max = 4.4357367 std = 0.51616716
+# Non-member: min = 0.13452145 max = 4.1866317 std = 0.5952754
+# w4a4-MIA test set distribution **************************************************
+# Member: min = 0.2703534 max = 4.727153 std = 0.59843504
+# Non-member: min = 0.10497989 max = 4.1446176 std = 0.6426853
+# test accuracy:  0.5961
+# test precision:  0.5715136180979312
+# test recall:  0.768
+# AUC
+#  0.6433573112500001
+# TPR at FPR = 0.001: 0.01315
+# ****************************************************************************************************
+# accuracy_mia_base_classifier
+#  0.598575
+# precision_mia_base_classifier
+#  0.5575301292713531
+# recall_mia_base_classifier
+#  0.9553
+# AUC
+#  0.61777280125
+# TPR at FPR = 0.001: 0.0009

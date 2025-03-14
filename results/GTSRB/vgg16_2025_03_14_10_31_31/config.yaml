@@ -1,0 +1,108 @@
+path:
+  data_path: './data/GTSRB/'
+  result_path: results/
+  config_path: config/GTSRB/config.yaml
+
+general:
+  num_classes: 43
+
+learning:
+  train_batch_size: 64
+  test_batch_size: 64
+  num_workers: 16
+  learning_rate: 0.015
+  momentum: 0.9
+  weight_decay: 0.0005
+  decrease_lr_factor: 0.12
+  decrease_lr_every: 5
+  epochs: 5
+
+distill:
+  train_batch_size: 64
+  num_workers: 16
+  learning_rate: 0.001
+  momentum: 0.9
+  weight_decay: 0.0005
+  decrease_lr_factor: 0.1
+  decrease_lr_every: 20
+  epochs: 10
+
+attack_learning:
+  train_batch_size: 64
+  test_batch_size: 256
+  num_workers: 16
+  learning_rate: 0.0005
+  momentum: 0.9
+  weight_decay: 0.00001
+  decrease_lr_factor: 0.1
+  decrease_lr_every: 30
+  epochs: 100
+
+# Namespace(model='vgg16', dataset='GTSRB', attack_method_attention='rollout', metric='KL_divergence', device='cuda', seed=10)
+
+# target_train_test_accuracy
+#  [0.9995177  0.99392302]
+# shadow_train_test_accuracy
+#  [0.99623806 0.99816726]
+# ****************************************************************************************************
+# w16a16-MIA train set distribution **************************************************
+# Member: min = 0.0 max = 23.02585 std = 5.790504
+# Non-member: min = 0.0 max = 22.107964 std = 1.1057439
+# w16a16-MIA test set distribution **************************************************
+# Member: min = 0.0 max = 23.02585 std = 5.732058
+# Non-member: min = 0.0 max = 6.823278 std = 0.20260307
+# test accuracy:  0.9793093469663355
+# test precision:  0.9993969849246231
+# test recall:  0.9591974534580882
+# AUC
+#  0.9804229859181076
+# TPR at FPR = 0.001: 0.960065592746214
+# ****************************************************************************************************
+# w8a8-MIA train set distribution **************************************************
+# Member: min = 0.0 max = 23.02585 std = 5.694249
+# Non-member: min = 0.0 max = 22.109222 std = 1.1108525
+# w8a8-MIA test set distribution **************************************************
+# Member: min = 0.0 max = 23.02585 std = 5.7012253
+# Non-member: min = 0.0 max = 6.821715 std = 0.2059409
+# test accuracy:  0.9803221761358155
+# test precision:  0.9994984451800581
+# test recall:  0.9611266518761454
+# AUC
+#  0.9827941442100847
+# TPR at FPR = 0.001: 0.9627664705314941
+# ****************************************************************************************************
+# w6a6-MIA train set distribution **************************************************
+# Member: min = 0.0 max = 23.02585 std = 5.9360633
+# Non-member: min = 0.0 max = 21.482096 std = 1.0704095
+# w6a6-MIA test set distribution **************************************************
+# Member: min = 0.0 max = 23.02585 std = 5.943244
+# Non-member: min = 0.0 max = 6.026475 std = 0.26163343
+# test accuracy:  0.9783447477573068
+# test precision:  0.9989937613201851
+# test recall:  0.9576540947236424
+# AUC
+#  0.9816330336159429
+# TPR at FPR = 0.001: 0.958618693932671
+# ****************************************************************************************************
+# w4a4-MIA train set distribution **************************************************
+# Member: min = 2.1305596e-06 max = 22.986715 std = 4.860265
+# Non-member: min = 5.839453e-07 max = 15.007996 std = 1.3628488
+# w4a4-MIA test set distribution **************************************************
+# Member: min = 1.1242455e-07 max = 23.025536 std = 5.0021553
+# Non-member: min = 3.4988955e-07 max = 10.708382 std = 1.322947
+# test accuracy:  0.9257740908652455
+# test precision:  0.9444220700765203
+# test recall:  0.9047940580688724
+# AUC
+#  0.9682406896753151
+# TPR at FPR = 0.001: 0.6198514517218096
+# ****************************************************************************************************
+# accuracy_mia_base_classifier
+#  0.5013986688530916
+# precision_mia_base_classifier
+#  0.5015769439912996
+# recall_mia_base_classifier
+#  0.4448731552040127
+# AUC
+#  0.5006700042649112
+# TPR at FPR = 0.001: 0.000859103681764489
