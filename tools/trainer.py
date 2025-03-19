@@ -68,7 +68,7 @@ def train_model(model, criterion, optimizer, scheduler, dataloaders, dataset_siz
         time_elapsed // 60, time_elapsed % 60))
     print("DONE TRAIN")
 
-    model.load_state_dict(best_model_wts)
+    # model.load_state_dict(best_model_wts)
 
     return model
 

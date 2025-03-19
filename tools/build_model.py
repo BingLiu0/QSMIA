@@ -16,6 +16,8 @@ def distill(args, config, model, dataloader):
     kl_loss = nn.KLDivLoss(reduction='batchmean')
     optimizer = optim.SGD(student_model.parameters(), lr=config.distill.learning_rate, momentum=config.distill.momentum, weight_decay=config.distill.weight_decay)
     scheduler = lr_scheduler.StepLR(optimizer, step_size=config.distill.decrease_lr_factor, gamma=config.distill.decrease_lr_every)
+    # optimizer = optim.AdamW(target_model.parameters(), lr=config.learning.learning_rate, weight_decay=config.learning.weight_decay)
+    # exp_lr_scheduler = lr_scheduler.CosineAnnealingLR(optimizer, T_max=config.learning.epochs)
     
     since = time.time()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
